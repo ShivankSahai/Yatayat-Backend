@@ -41,7 +41,7 @@ app.post('/users', (req, res) => {
 
 app.get('/traffic', (req, res) => {
     TrafficCom.find().then((traffic) => {
-        res.send({ traffic })
+        res.send(traffic)
     }).catch((err) => {
         res.status(400).send(err)
     })
@@ -53,8 +53,7 @@ app.post('/traffic', (req, res) => {
     let traffic = new TrafficCom({
         date:req.body.date,
         time:req.body.time,
-        latitude:req.body.latitude,
-        longitude:req.body.longitude,
+        place:req.body.place,
         level:req.body.level
     })
 
@@ -67,7 +66,7 @@ app.post('/traffic', (req, res) => {
 
 app.get('/accident', (req, res) => {
     AccidentCom.find().then((accident) => {
-        res.send({ accident })
+        res.send(accident)
     }).catch((err) => {
         res.status(400).send(err)
     })
@@ -79,8 +78,7 @@ app.post('/accident', (req, res) => {
     let accident = new AccidentCom({
         date:req.body.date,
         time:req.body.time,
-        latitude:req.body.latitude,
-        longitude:req.body.longitude,
+        place:req.body.place,
         level:req.body.level
     })
 

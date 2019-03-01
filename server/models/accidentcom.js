@@ -7,11 +7,8 @@ let AccidentCom = mongoose.model('AccidentCom', {
     time:{
         type:String
     },
-    latitude:{
-        type:Number
-    },
-    longitude:{
-        type:Number
+    place:{
+        type:String
     },
     level:{
         type:String

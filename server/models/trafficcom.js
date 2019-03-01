@@ -7,11 +7,8 @@ let TrafficCom = mongoose.model('TrafficCom', {
     time:{
         type:String
     },
-    latitude:{
-        type:Number
-    },
-    longitude:{
-        type:Number
+    place:{
+        type:String
     },
     no_of_complaints:{
         type:Number
