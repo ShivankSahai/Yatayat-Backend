@@ -100,8 +100,6 @@ app.get('/daily', (req, res) => {
 })
 
 app.post('/daily', (req, res) => {
-    console.log(req.body)
-
     let daily = new DailySchedules({
         date:req.body.date,
         bus:req.body.bus,
