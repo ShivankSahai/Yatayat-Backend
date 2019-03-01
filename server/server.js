@@ -93,7 +93,7 @@ app.post('/accident', (req, res) => {
 
 app.get('/daily', (req, res) => {
     DailySchedules.find().then((daily) => {
-        res.send({ daily })
+        res.send(daily)
     }).catch((err) => {
         res.status(400).send(err)
     })
