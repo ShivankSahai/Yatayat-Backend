@@ -19,8 +19,7 @@ app.use(bodyParser.json())
 app.post('/rgeo',(req,res)=>{
     let lat=req.body.lat
     let long=req.body.long
-    let d
-
+    
     let config={
         'latitude':lat,
         'longitude':long,
@@ -29,14 +28,11 @@ app.post('/rgeo',(req,res)=>{
 
     geo.location(config, function (err, data){
         if(err){
-            console.log(err);
+            res.send(err)
         }else{
-            d=data
+            res.send(data)
         }
     });
-
-    res.send(d)
-
 })
 
 app.get('/users', (req, res) => {
