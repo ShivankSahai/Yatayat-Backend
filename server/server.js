@@ -2,6 +2,7 @@ let express = require('express')
 let bodyParser = require('body-parser')
 let geocoding = new require('reverse-geocoding');
 let geo=new require('reverse-geocoding-google')
+let cors=require('cors')
 
 let { mongoose } = require('./db/mongoose.js')
 
@@ -15,6 +16,7 @@ let app = express()
 let port = process.env.PORT || 3000
 
 app.use(bodyParser.json())
+app.use(cors())
 
 app.post('/rgeo',(req,res)=>{
     let lat=req.body.lat
