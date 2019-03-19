@@ -27,11 +27,7 @@ app.post('/rgeo',(req,res)=>{
     }
 
     geo.location(config, function (err, data){
-        if(err){
-            res.send(err)
-        }else{
-            res.send({data})
-        }
+        res.send(data)
     });
 })
 
