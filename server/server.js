@@ -27,7 +27,7 @@ app.post('/rgeo',(req,res)=>{
     }
 
     geo.location(config, function (err, data){
-        res.send(data)
+        res.send(data.results[0].formatted_address)
     });
 })
 
