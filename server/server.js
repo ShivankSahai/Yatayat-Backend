@@ -1,6 +1,6 @@
 let express = require('express')
 let bodyParser = require('body-parser')
-var geocoding = new require('reverse-geocoding');
+let geocoding = new require('reverse-geocoding');
 
 let { mongoose } = require('./db/mongoose.js')
 
@@ -18,17 +18,17 @@ app.use(bodyParser.json())
 app.post('/rgeo',(req,res)=>{
     let lat=req.body.lat
     let long=req.body.long
-    let data
+    let d
 
     geocoding.location(config, function (err, data){
         if(err){
             console.log(err);
         }else{
-            data=data
+            d=data
         }
     });
 
-    res.send(data)
+    res.send(d)
 
 })
 
