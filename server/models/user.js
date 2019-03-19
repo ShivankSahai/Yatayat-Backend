@@ -12,6 +12,9 @@ let User = mongoose.model('User', {
     },
     password:{
         type:String
+    },
+    user_type:{
+        type:String
     }
 })
 
