@@ -29,7 +29,8 @@ app.post('/users', (req, res) => {
         name:req.body.name,
         email:req.body.email,
         aadhar:req.body.aadhar,
-        password:req.body.password
+        password:req.body.password,
+        user_type:req.body.user_type
     })
 
     user.save().then((doc) => {
