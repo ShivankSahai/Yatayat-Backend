@@ -20,6 +20,11 @@ app.post('/rgeo',(req,res)=>{
     let long=req.body.long
     let d
 
+    let config={
+        'latitude':lat,
+        'longitude':long
+    }
+
     geocoding.location(config, function (err, data){
         if(err){
             console.log(err);
